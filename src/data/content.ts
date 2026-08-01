@@ -71,6 +71,17 @@ export const experience = [
     ],
   },
   {
+    org: "3i Consulting Pvt. Ltd.",
+    location: "Remote",
+    role: "AI/ML Intern",
+    dates: "Sep 2025 – Nov 2025",
+    bullets: [
+      "Contributed to AI/ML solutions spanning newspaper OCR extraction and news intelligence systems, building tooling to process and structure unstructured text at scale.",
+      "Built data scraping pipelines aggregating content from 100+ news sources to power a Brand Narrative Intelligence platform.",
+      "Developed agricultural market pricing models for FarmerPay, applying ML techniques to real-world pricing data.",
+    ],
+  },
+  {
     org: "GirlScript Summer of Code (GSSoC)",
     role: "Open Source Contributor",
     dates: "2025",
