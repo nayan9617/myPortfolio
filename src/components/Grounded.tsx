@@ -3,18 +3,27 @@ import { SectionReveal } from "./SectionReveal";
 
 export function Grounded() {
   return (
-    <section id="grounded" className="section-pad relative bg-forest">
-      <div className="container-ascent">
+    <section id="grounded" className="section-pad relative overflow-hidden bg-bedrock">
+      {/* Quiet forest wash — accent, not a solid green slab */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_0%_50%,rgba(36,64,47,0.55),transparent_65%)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-forest via-forest/40 to-transparent"
+      />
+
+      <div className="container-ascent relative">
         <SectionReveal>
-          <p className="eyebrow mb-6 text-mist/60">Grounded</p>
-          <blockquote className="max-w-2xl">
-            <p className="font-display text-2xl leading-snug text-mist md:text-3xl text-balance">
-              {grounded.statement}
-            </p>
-          </blockquote>
-          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.16em] text-mist/40">
-            TODO: Nayan — write this in your own words
-          </p>
+          <div className="border-l-2 border-forest pl-6 md:pl-8">
+            <p className="eyebrow mb-6">Grounded</p>
+            <blockquote className="max-w-2xl">
+              <p className="font-display text-2xl leading-snug text-mist md:text-3xl text-balance">
+                {grounded.statement}
+              </p>
+            </blockquote>
+          </div>
         </SectionReveal>
       </div>
     </section>

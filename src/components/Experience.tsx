@@ -18,9 +18,16 @@ export function Experience() {
               <article>
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                   <div>
-                    <h3 className="font-display text-xl text-mist md:text-2xl">
-                      {job.org}
-                    </h3>
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <h3 className="font-display text-xl text-mist md:text-2xl">
+                        {job.org}
+                      </h3>
+                      {"location" in job && job.location ? (
+                        <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-mist/40">
+                          {job.location}
+                        </span>
+                      ) : null}
+                    </div>
                     <p className="mt-1 font-body text-sm text-mist/65">
                       {job.role}
                     </p>

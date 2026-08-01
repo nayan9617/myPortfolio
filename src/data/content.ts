@@ -6,8 +6,7 @@ export const contact = {
   github: "https://github.com/nayan9617",
   githubLabel: "github.com/nayan9617",
   location: "Jodhpur, India",
-  // TODO: Nayan — add resume PDF path once available
-  resumeHref: null as string | null,
+  resumeHref: "/Nayan-Patidar-Resume.pdf",
 };
 
 export const hero = {
@@ -18,9 +17,8 @@ export const hero = {
 };
 
 export const grounded = {
-  // TODO: Nayan — write this in your own words / name your actual faith if you want it explicit.
   statement:
-    "Everything here is built on a simple foundation — gratitude for what I've been given, faith that keeps me steady, and the belief that the work speaks louder than the noise.",
+    "I climb hard, but I don't climb hollow. Gratitude for what's been given, faith that keeps me steady, and a clear head when the noise gets loud — that's the bedrock everything else is built on.",
 };
 
 export const education = {
@@ -42,6 +40,16 @@ export const skills = [
 
 export const experience = [
   {
+    org: "Handshake AI",
+    location: "Remote",
+    role: "AI Training Fellow — Project Dynamo (Contract)",
+    dates: "Jul 2026 – Present",
+    // TODO: Nayan — this role is brand new. Once you're a few weeks in, replace or add a second bullet with something concrete: the actual task type, stack, or QC process, once you know what's shareable. Don't ship this with only the one generic bullet for long — a single vague line reads worse than no entry at all once a recruiter clicks in.
+    bullets: [
+      "Selected as a fellow for Project Dynamo, contributing benchmark task design and calibration work for frontier AI model training and evaluation, in a similar scope to prior AfterQuery/Harbor work.",
+    ],
+  },
+  {
     org: "Summer of Bitcoin",
     role: "Open Source Contributor — Finalist",
     dates: "Jan 2026 – Apr 2026",
@@ -49,6 +57,17 @@ export const experience = [
       "Advanced through three evaluation rounds covering Bitcoin protocol design, distributed systems, and software engineering as part of a competitive open-source contributor selection process.",
       "Authored a technical proposal outlining an implementation plan, performance optimizations, and contributor roadmap for open-source Bitcoin infrastructure.",
       "Reached finalist status in a globally competitive selection where few candidates advance.",
+    ],
+  },
+  {
+    org: "AfterQuery / Harbor",
+    location: "Remote",
+    role: "Benchmark Task Author (Contract)",
+    dates: "Nov 2025 – Present",
+    bullets: [
+      "Designed and calibrated coding benchmark tasks used to train and evaluate LLM coding agents for frontier AI labs — planting deliberate bugs and edge cases tuned so weaker models fail predictably while stronger models pass only rarely.",
+      "Built realistic backend reference codebases as production-like environments for benchmark tasks, giving agents a real system to reason about rather than a toy problem.",
+      "Took tasks through full QC pipelines — similarity checks, fairness review, and difficulty calibration — with multiple tasks approved as reference benchmarks on the platform.",
     ],
   },
   {
