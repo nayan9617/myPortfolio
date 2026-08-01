@@ -9,8 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        bedrock: "#14171C",
+        granite: "#2B2F36",
+        brass: "#C9A24B",
+        forest: "#24402F",
+        mist: "#EDE9DF",
+      },
+      fontFamily: {
+        display: ["var(--font-fraunces)", "serif"],
+        body: ["var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-ibm-plex-mono)", "monospace"],
+      },
+      transitionDuration: {
+        micro: "180ms",
+      },
+      transitionTimingFunction: {
+        micro: "ease-out",
       },
     },
   },

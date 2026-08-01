@@ -3,25 +3,93 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bedrock: #14171c;
+  --granite: #2b2f36;
+  --brass: #c9a24b;
+  --forest: #24402f;
+  --mist: #ede9df;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--mist);
+  background: var(--bedrock);
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brass) 40%, transparent);
+  color: var(--mist);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+@keyframes rail-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 162, 75, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(201, 162, 75, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 162, 75, 0);
+  }
+}
+
+.animate-rail-glow {
+  animation: rail-glow 0.7s ease-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rail-glow {
+    animation: none;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .section-pad {
+    @apply py-16 md:py-[120px];
+  }
+
+  .container-ascent {
+    @apply mx-auto w-full max-w-5xl px-5 md:px-8 lg:pr-28;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-brass;
+  }
+
+  .link-quiet {
+    @apply transition-colors duration-micro ease-micro hover:text-brass focus-visible:text-brass;
+  }
+
+  .underline-quiet {
+    @apply underline decoration-transparent underline-offset-4 transition-colors duration-micro ease-micro hover:decoration-brass;
   }
 }
