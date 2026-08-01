@@ -21,6 +21,7 @@ const TowerScene = dynamic(() => import("./TowerScene"), {
  */
 export function Tower() {
   const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
+  const [floorHovered, setFloorHovered] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -30,7 +31,6 @@ export function Tower() {
     return () => mq.removeEventListener("change", update);
   }, []);
 
-  // SSR / first paint: show static fallback (no three.js in initial payload)
   if (isDesktop === null || !isDesktop) {
     return (
       <div className="flex h-full min-h-[240px] items-center justify-center py-4 md:min-h-[360px]">
@@ -40,11 +40,15 @@ export function Tower() {
   }
 
   return (
-    <div className="relative h-[360px] w-full lg:h-[420px]">
+    <div
+      className={`relative h-[400px] w-full lg:h-[460px] ${
+        floorHovered ? "cursor-pointer" : "cursor-default"
+      }`}
+    >
       <p className="pointer-events-none absolute left-0 top-0 z-10 font-mono text-[10px] uppercase tracking-[0.18em] text-brass/70">
-        The Tower · click a floor
+        The Tower · hover a floor · click to climb
       </p>
-      <TowerScene />
+      <TowerScene onHoverChange={setFloorHovered} />
     </div>
   );
 }
