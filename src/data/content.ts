@@ -168,3 +168,20 @@ export const sections = [
 ] as const;
 
 export type SectionId = (typeof sections)[number]["id"];
+
+/**
+ * Nav / Tower floors — primary jump targets.
+ * Education stays in-page but is skipped in the compact nav (reachable by scroll).
+ */
+export const navFloors = [
+  { id: "foundation", navLabel: "Foundation", towerLabel: "Foundation" },
+  { id: "grounded", navLabel: "Grounded", towerLabel: "Grounded" },
+  { id: "skills", navLabel: "Skills", towerLabel: "Skills" },
+  { id: "experience", navLabel: "Experience", towerLabel: "Experience" },
+  { id: "projects", navLabel: "Projects", towerLabel: "Projects" },
+  { id: "positions", navLabel: "POR", towerLabel: "Positions" },
+  { id: "summit", navLabel: "Summit", towerLabel: "The Summit" },
+  { id: "basecamp", navLabel: "Basecamp", towerLabel: "Basecamp" },
+] as const;
+
+export type NavFloorId = (typeof navFloors)[number]["id"];

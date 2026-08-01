@@ -1,4 +1,5 @@
-import { ElevationRail, MobileProgress } from "@/components/ElevationRail";
+import { ElevationRail } from "@/components/ElevationRail";
+import { NavBar } from "@/components/NavBar";
 import { Hero } from "@/components/Hero";
 import { Grounded } from "@/components/Grounded";
 import { Education } from "@/components/Education";
@@ -14,11 +15,11 @@ export default function Home() {
     <>
       <a
         href="#foundation"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-brass focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:text-bedrock"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-16 focus:z-[100] focus:bg-brass focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:text-bedrock"
       >
         Skip to content
       </a>
-      <MobileProgress />
+      <NavBar />
       <ElevationRail />
       <main>
         <Hero />
